@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <title>Latihan 2</title>
+  </head>
+  <body>
+    <div id="app">
+      <ol>
+        <li v-for="daftar in listDaftar">{{ daftar }}</li>
+      </ol>
+        <input v-model="tambahList" />
+        <button @click="tambahkan">tambahkan</button>
+      <p v-if="jumlah>=4">Hebat!</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          listDaftar: [],
+          jumlah:0
+        },
+        methods:{
+          tambahkan(){
+            this.listDaftar.push(this.tambahList);
+            this.jumlah++;
+            this.tambahList='';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
